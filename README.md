@@ -3,10 +3,7 @@
 <em>Angular 5+Firebase integration starter project</em>
 
 ![license](https://img.shields.io/github/license/bitshiftedDevelopment/Ng-Firebase-Seed.svg)
-
-<a href="https://travis-ci.org/bitshiftedDevelopment/Ng-Firebase-Seed" id="status-image-popup" title="Latest push build on master branch: passed" name="status-images" class="open-popup" data-ember-action="" data-ember-action-767="767">
-  <img src="https://travis-ci.org/bitshiftedDevelopment/Ng-Firebase-Seed.svg?branch=master" alt="build:passed">
-</a>
+![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Firebase-Seed/BRANCH.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Firebase-Seed.svg)
 
 ### Branch: Master
