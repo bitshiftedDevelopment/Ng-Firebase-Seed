@@ -1,0 +1,14 @@
+<div class="loginHeader">
+  <h2>Please login to continue</h2>
+</div>
+
+<span class="error" *ngIf="auth.error">{{auth.error.errorCode}} {{auth.error.errorMessage}}</span>
+
+<div class="socialLoginButtons">
+  <facebook-signin-button></facebook-signin-button>
+  <github-signin-button></github-signin-button>
+  <google-signin-button></google-signin-button>
+  <twitter-signin-button></twitter-signin-button>
+</div>
+
+<button (click)="auth.signOut()">Log out</button>

@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { AuthService } from '../auth.service';
+import { AuthService } from '@app/core/auth.service';
 
 //TODO Interface could be replaced by importing seperate file to keep this clean
 interface Post {

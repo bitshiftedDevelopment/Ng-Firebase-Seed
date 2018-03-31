@@ -11,8 +11,16 @@ import 'rxjs/add/operator/switchMap'
 // Extend the user profile data in this file as well as in updateUserData()
 import { User } from './user';
 
+interface errMsg {
+  errorCode: string;
+  errorMessage: string;
+  email: string;
+  credential: string;
+}
+
 @Injectable()
 export class AuthService {
+  error: errMsg;
   user: Observable<User>; // Holds the currently authenticated user object
   /* The constructor will set the Observable.
    * First it receives the current Firebase auth state.
@@ -74,7 +82,16 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
-      })
+      }).catch(
+        (err) => {
+          //this.error = err;
+          this.error.errorCode = err.code;
+          this.error.errorMessage = err.message;
+          // The email of the user's account used.
+          this.error.email = err.email;
+          // The firebase.auth.AuthCredential type that was used.
+          this.error.credential = err.credential;
+        })
   }
 
   /* updateUserData(user)
@@ -84,17 +101,15 @@ export class AuthService {
   private updateUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const data: User = { // any additional data to be saved must be added here and to the class above
+    const data: User = { // any additional data to be saved must be added here and to the imported interface
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      //favoriteColor: user.favoriteColor || 'unset',
       roles: user.roles || { // roles is either the stored roles on the document or a new object
-        subscriber: true,
-        editor: false,
-        admin: false
+        subscriber: true
       }
+      //favoriteColor: user.favoriteColor || 'unset',
     }
     return userRef.set(data, { merge: true })
   }
@@ -104,7 +119,7 @@ export class AuthService {
    */
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['/home']);//TODO set up home route
+      this.router.navigate(['/login']);//TODO set up home route
     });
   }
 

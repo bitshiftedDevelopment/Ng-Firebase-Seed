@@ -9,6 +9,9 @@ export interface User {
   email: string;
   photoURL?: string;
   displayName?: string;
-  roles: Roles;
+  role: Roles;
+  // subscriber?: boolean;
+  // editor?: boolean;
+  // admin?: boolean;
   //favoriteColor?: string;  //example of adding additional user information
 }

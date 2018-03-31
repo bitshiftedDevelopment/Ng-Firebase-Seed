@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// Component routing imports
 import { PostBrowserComponent } from './core/post-browser/post-browser.component';
+import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
   {
@@ -11,6 +14,10 @@ const routes: Routes = [
   {//INDEV
     path: 'posts',
     component: PostBrowserComponent
+  },
+  {//INDEV
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
