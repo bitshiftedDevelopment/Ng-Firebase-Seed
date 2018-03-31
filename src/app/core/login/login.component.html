@@ -2,7 +2,13 @@
   <h2>Please login to continue</h2>
 </div>
 
-<span class="error" *ngIf="auth.error">{{auth.error.errorCode}} {{auth.error.errorMessage}}</span>
+<div *ngIf="auth.error | async as error">
+  <span class="error">{{error.errorCode}} {{error.errorMessage}}</span>
+</div>
+
+<div class="emailLoginForm">
+
+</div>
 
 <div class="socialLoginButtons">
   <facebook-signin-button></facebook-signin-button>
