@@ -82,16 +82,19 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
-      }).catch(
-        (err) => {
-          //this.error = err;
-          this.error.errorCode = err.code;
-          this.error.errorMessage = err.message;
-          // The email of the user's account used.
-          this.error.email = err.email;
-          // The firebase.auth.AuthCredential type that was used.
-          this.error.credential = err.credential;
-        })
+      }).catch(function(error) {
+        // Handle Errors here.
+
+        this.error.errorCode = error.code;
+        this.error.errorMessage = error.message;
+        // The email of the user's account used.
+        this.error.email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        this.error.credential = error.credential;
+        // ...
+      }).then(() => {
+        this.router.navigate(['/profile']);
+      });
   }
 
   /* updateUserData(user)
@@ -114,7 +117,6 @@ export class AuthService {
       },
       privFlags: user.privFlags || {
         email: false,
-        displayName: true,
         firstName: false,
         lastName: false,
         photoURL: false,
@@ -131,6 +133,8 @@ export class AuthService {
   signOut() {
     this.afAuth.auth.signOut().then(() => {
       this.router.navigate(['/login']);//TODO set up home route
+    }).catch(function(error) {
+      this.error = error
     });
   }
 

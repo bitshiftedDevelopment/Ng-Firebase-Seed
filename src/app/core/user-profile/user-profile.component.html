@@ -20,11 +20,11 @@
       <h3>Welcome back, {{ user.displayName }}</h3>
 
       <div class="imagePanel">
-        <img [src]="user.photoURL">
-        <div *ngIf="user.firstName">
+        <img [src]="user.photoURL" *ngIf="user.privFlags.photoURL == true">
+        <div *ngIf="user.privFlags.firstName == true">
           First name: <small>{{user.firstName}}</small>
         </div>
-        <div *ngIf="user.lastName">
+        <div *ngIf="user.privFlags.lastName == true">
           Last name: <small>{{user.lastName}}</small>
         </div>
       </div>
@@ -33,7 +33,7 @@
         <div class="uidDisplay">
           <small>UID: {{ user.uid }}</small>
         </div>
-        <div class="emailDisplay">
+        <div class="emailDisplay" *ngIf="user.privFlags.email == true">
           <small>Email address: {{user.email}}</small>
         </div>
         <div class="roleDisplay">
@@ -46,7 +46,7 @@
             </tr>
           </small>
         </div>
-        <div class="colorDisplay" *ngIf="user.favoriteColor" [ngStyle]="{'background-color': user.favoriteColor}">
+        <div class="colorDisplay" *ngIf="user.privFlags.favoriteColor == true" [ngStyle]="{'background-color': user.favoriteColor}">
           <p>Favorite Color: {{ user?.favoriteColor }} </p>
         </div>
       </div>
