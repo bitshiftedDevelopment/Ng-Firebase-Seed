@@ -7,7 +7,6 @@ import { AdminOnlyComponent } from './core/errors/admin-only/admin-only.componen
 
 // Component routing imports
 import { PostBrowserComponent } from './core/post-browser/post-browser.component';
-import { PostComponent } from './core/post/post.component';
 import { LoginComponent } from './core/login/login.component';
 import { UserProfileComponent } from './core/user-profile/user-profile.component';
 import { AdminProfileComponent } from './core/admin-profile/admin-profile.component';
