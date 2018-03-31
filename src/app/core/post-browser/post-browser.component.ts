@@ -17,7 +17,7 @@ interface PostId extends Post {
 }
 
 @Component({
-  selector: 'seed-post-browser',
+  selector: 'post-browser',
   templateUrl: './post-browser.component.html',
   styleUrls: ['./post-browser.component.scss']
 })

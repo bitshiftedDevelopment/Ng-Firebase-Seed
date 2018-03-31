@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
 import { tap, map, take } from 'rxjs/operators';
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
@@ -16,7 +16,7 @@ export class AdminGuard implements CanActivate {
       tap(isAdmin => {
         if (!isAdmin) {
           console.error('Access denied - Admins only')
-          //TODO add error page
+          this.router.navigate(['/accessDenied']
         }
       })
     );
