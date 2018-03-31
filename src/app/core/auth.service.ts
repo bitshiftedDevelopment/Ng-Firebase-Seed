@@ -97,6 +97,7 @@ export class AuthService {
   /* updateUserData(user)
    * This private method runs after the user authenticates and sets their information to the Firestore database.
    * We pass the { merge: true } option to make this a non-destructive set.
+   * NOTE: fields are in data are published to Firestore at users/user.uid
    */
   private updateUserData(user) {
     // Sets user data to firestore on login
@@ -105,11 +106,21 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL,
+      firstName: user.firstName || '',
+      lastName: user.lastName || '',
+      photoURL: user.photoURL || '',
       roles: user.roles || { // roles is either the stored roles on the document or a new object
-        subscriber: true
-      }
-      //favoriteColor: user.favoriteColor || 'unset',
+        subscriber: true // we add the subscriber role on registration
+      },
+      privFlags: user.privFlags || {
+        email: false,
+        displayName: true,
+        firstName: false,
+        lastName: false,
+        photoURL: false,
+        favoriteColor: false // example of adding additional user information - remove me if not wanted
+      },
+      favoriteColor: user.favoriteColor || '' // example of adding additional user information - remove me if not wanted
     }
     return userRef.set(data, { merge: true })
   }

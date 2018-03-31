@@ -1,0 +1,58 @@
+<div *ngIf="auth.user | async; then authenticated else guest">
+  <!-- template will replace this div -->
+</div>
+
+
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <h3>Greetings, GUEST</h3>
+  <p>Login to get started...</p>
+  <button (click)="auth.googleLogin()">
+        <i class="fa fa-google"></i> Connect Google
+    </button>
+</ng-template>
+
+
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div *ngIf="auth.user | async as user">
+    <div class="activeProfile">
+      <h3>Welcome back, {{ user.displayName }}</h3>
+
+      <div class="imagePanel">
+        <img [src]="user.photoURL">
+        <div *ngIf="user.firstName">
+          First name: <small>{{user.firstName}}</small>
+        </div>
+        <div *ngIf="user.lastName">
+          Last name: <small>{{user.lastName}}</small>
+        </div>
+      </div>
+
+      <div class="infoPanel">
+        <div class="uidDisplay">
+          <small>UID: {{ user.uid }}</small>
+        </div>
+        <div class="emailDisplay">
+          <small>Email address: {{user.email}}</small>
+        </div>
+        <div class="roleDisplay">
+          <small>User rights:</small>
+          <small>
+            <tr *ngFor="let role of user.roles | keys">
+              <div *ngIf="role.value == true">
+                <td>{{role.key | uppercase}}</td>
+              </div>
+            </tr>
+          </small>
+        </div>
+        <div class="colorDisplay" *ngIf="user.favoriteColor" [ngStyle]="{'background-color': user.favoriteColor}">
+          <p>Favorite Color: {{ user?.favoriteColor }} </p>
+        </div>
+      </div>
+
+      <button (click)="auth.signOut()">Logout</button>
+    </div>
+
+  </div>
+</ng-template>

@@ -11,12 +11,18 @@ import { AuthService } from './auth.service';
 import { CanReadGuard } from './can-read.guard';
 import { AdminGuard } from './admin.guard';
 
-// Firebaseui imports
+// Custom pipe for iterating over an object
+import { KeysPipe } from './keys.pipe';
+
+// App imports
 import { LoginComponent } from './login/login.component';
 import { GoogleButtonComponent } from './login/google-button/google-button.component';
 import { GithubButtonComponent } from './login/github-button/github-button.component';
 import { FacebookButtonComponent } from './login/facebook-button/facebook-button.component';
 import { TwitterButtonComponent } from './login/twitter-button/twitter-button.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
+
 
 @NgModule({
   imports: [
@@ -24,7 +30,20 @@ import { TwitterButtonComponent } from './login/twitter-button/twitter-button.co
     AngularFireAuthModule,
     FormsModule
   ],
-  declarations: [PostBrowserComponent, LoginComponent, GoogleButtonComponent, GithubButtonComponent, FacebookButtonComponent, TwitterButtonComponent],
-  providers: [AuthService, CanReadGuard, AdminGuard]
+  declarations: [
+    PostBrowserComponent,
+    LoginComponent,
+    GoogleButtonComponent,
+    GithubButtonComponent,
+    FacebookButtonComponent,
+    TwitterButtonComponent,
+    UserProfileComponent,
+    KeysPipe
+  ],
+  providers: [
+    AuthService,
+    CanReadGuard,
+    AdminGuard
+  ]
 })
 export class CoreModule { }
