@@ -124,6 +124,7 @@ export class AuthService {
       },
       favoriteColor: user.favoriteColor || '' // example of adding additional user information - remove me if not wanted
     }
+    //FIXME overwrites user doc if admin role is set
     return userRef.set(data, { merge: true })
   }
 
