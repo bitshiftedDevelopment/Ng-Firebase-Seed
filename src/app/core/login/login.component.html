@@ -3,7 +3,7 @@
 </div>
 
 <div *ngIf="auth.error | async as error">
-  <span class="error">{{error.errorCode}} {{error.errorMessage}}</span>
+  <span class="error">{{error.errorCode}} {{error.errorMessage}}</span> {{error}}
 </div>
 
 <div class="emailLoginForm">

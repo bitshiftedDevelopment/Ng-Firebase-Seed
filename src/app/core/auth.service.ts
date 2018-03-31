@@ -82,9 +82,8 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
-      }).catch(function(error) {
+      }).catch((error) => {
         // Handle Errors here.
-
         this.error.errorCode = error.code;
         this.error.errorMessage = error.message;
         // The email of the user's account used.
@@ -133,7 +132,7 @@ export class AuthService {
    */
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['/login']);//TODO set up home route
+      this.router.navigate(['/login']);
     }).catch(function(error) {
       this.error = error
     });
