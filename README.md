@@ -3,11 +3,11 @@
 <em>Angular 5+Firebase integration starter project</em>
 
 ![license](https://img.shields.io/github/license/bitshiftedDevelopment/Ng-Firebase-Seed.svg)
-![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Firebase-Seed/master.svg)
+![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Firebase-Seed/unstable.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Firebase-Seed.svg)
 
-### Branch: Master
+### Branch: Unstable
 
--   Status: STABLE
+-   Status: UNSTABLE
 
-This is the stable branch that should be used for any new projects
+This branch acts as a staging point for new features to be tested with the rest of the site before being merged into the main branch.
