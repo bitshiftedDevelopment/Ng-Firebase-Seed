@@ -3,6 +3,8 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import { AuthService } from '@app/core/auth.service';
+
 //TODO Interface could be replaced by importing seperate file to keep this clean
 interface Post {
   title: string;
@@ -15,7 +17,7 @@ interface PostId extends Post {
 }
 
 @Component({
-  selector: 'seed-post-browser',
+  selector: 'post-browser',
   templateUrl: './post-browser.component.html',
   styleUrls: ['./post-browser.component.scss']
 })
@@ -26,7 +28,7 @@ export class PostBrowserComponent implements OnInit {
   posts: any; // Actual array of documents contained within the collection
   title: string; // Should be replaced by some manner of input
   content: string; // Should be replaced by some manner of input
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore, public auth: AuthService) { }
 
   ngOnInit() {
     this.postsCol = this.afs.collection('posts'); // Fill the collection with the named value
