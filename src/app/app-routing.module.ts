@@ -6,11 +6,12 @@ import { AdminGuard } from './core/admin.guard';
 import { AdminOnlyComponent } from './core/errors/admin-only/admin-only.component';
 
 // Component routing imports
-import { PostBrowserComponent } from './core/post-browser/post-browser.component';
-import { LoginComponent } from './core/login/login.component';
-import { UserProfileComponent } from './core/user-profile/user-profile.component';
-import { AdminProfileComponent } from './core/admin-profile/admin-profile.component';
-import { HomeComponent } from './core/home/home.component';
+import { LoginComponent } from './app-pages/login/login.component';
+import { HomeComponent } from './app-pages/home/home.component';
+import { PostBrowserComponent } from './app-pages/post-browser/post-browser.component';
+import { UserProfileComponent } from './app-pages/user-profile/user-profile.component';
+import { AdminProfileComponent } from './app-pages/admin-profile/admin-profile.component';
+
 
 const routes: Routes = [
   {//INDEV

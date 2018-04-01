@@ -12,10 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // Contains core app functionality
 import { CoreModule } from './core/core.module';
-// Feature modules
+// Frontend frameworks
 import { MaterialAppModule } from './ngmat/ngmat.module';
 // App component pieces
-
+import { AppPagesModule } from './app-pages/app-pages.module';
+// Feature modules
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MaterialAppModule } from './ngmat/ngmat.module';
     AppRoutingModule,
     CoreModule,
     MaterialAppModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppPagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
