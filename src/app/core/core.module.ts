@@ -34,7 +34,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     AngularFireAuthModule,
     FormsModule,
     ErrorsModule
-  ],
+  ]
   declarations: [
     PostBrowserComponent,
     LoginComponent,
