@@ -16,6 +16,8 @@ import { ErrorsModule } from './errors/errors.module';
 import { KeysPipe } from './keys.pipe';
 
 // App imports
+/*Main routing*/
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { GoogleButtonComponent } from './login/google-button/google-button.component';
 import { GithubButtonComponent } from './login/github-button/github-button.component';
@@ -23,6 +25,7 @@ import { FacebookButtonComponent } from './login/facebook-button/facebook-button
 import { TwitterButtonComponent } from './login/twitter-button/twitter-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+
 
 
 @NgModule({
@@ -35,6 +38,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
   declarations: [
     PostBrowserComponent,
     LoginComponent,
+    HomeComponent,
     GoogleButtonComponent,
     GithubButtonComponent,
     FacebookButtonComponent,

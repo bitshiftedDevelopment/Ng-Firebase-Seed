@@ -1,2 +1,14 @@
-<h1>Ng-Firebase-Seed</h1>
-<router-outlet></router-outlet>
+<div class="app" fxLayout fxLayout="column" fxLayoutAlign="center" fxLayoutGap="0">
+  <mat-toolbar class="appHeader">
+    <h1>Ng-Firebase-Seed</h1>
+  </mat-toolbar>
+  <mat-card class="appBody">
+    <mat-card-content>
+      <p>
+        This card is used to display everything that comes out of the router. However anything outside of this card will always be present on the app. This could be used to provide a static navigation panel, or have content that you wish to be always available,
+        but not wired through the router.
+      </p>
+      <router-outlet></router-outlet>
+    </mat-card-content>
+  </mat-card>
+</div>
