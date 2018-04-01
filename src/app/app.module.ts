@@ -9,9 +9,12 @@ import { environment } from '@env/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+// Contains core app functionality
 import { CoreModule } from './core/core.module';
+// Frontend modules
 import { MaterialAppModule } from './ngmat/ngmat.module';
+import { FlexLayoutModule } from "@angular/flex-layout";
+// Feature modules
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { MaterialAppModule } from './ngmat/ngmat.module';
     AngularFirestoreModule,
     AppRoutingModule,
     CoreModule,
-    MaterialAppModule
+    MaterialAppModule,
+    FlexLayoutModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
