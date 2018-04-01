@@ -10,6 +10,7 @@ import { PostBrowserComponent } from './core/post-browser/post-browser.component
 import { LoginComponent } from './core/login/login.component';
 import { UserProfileComponent } from './core/user-profile/user-profile.component';
 import { AdminProfileComponent } from './core/admin-profile/admin-profile.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {//INDEV
@@ -20,6 +21,10 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {//INDEV
     path: 'posts',

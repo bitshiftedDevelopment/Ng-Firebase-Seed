@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 /// AngularFire imports
 import { AngularFireModule } from 'angularfire2';
@@ -11,14 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // Contains core app functionality
 import { CoreModule } from './core/core.module';
-// Frontend modules
-import { MaterialAppModule } from './ngmat/ngmat.module';
-import { FlexLayoutModule } from "@angular/flex-layout";
 // Feature modules
+import { MaterialAppModule } from './ngmat/ngmat.module';
+// App component pieces
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     AppRoutingModule,
     CoreModule,
     MaterialAppModule,
-    FlexLayoutModule.forRoot()
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
