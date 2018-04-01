@@ -26,10 +26,6 @@ const routes: Routes = [
     component: PostBrowserComponent
   },
   {//INDEV
-    path: 'post/:id',
-    component: PostComponent
-  },
-  {//INDEV
     path: 'login',
     component: LoginComponent
   },

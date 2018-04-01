@@ -23,9 +23,6 @@ import { FacebookButtonComponent } from './login/facebook-button/facebook-button
 import { TwitterButtonComponent } from './login/twitter-button/twitter-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
-import { PostComponent } from './post/post.component';
-
-
 
 
 @NgModule({
@@ -44,8 +41,7 @@ import { PostComponent } from './post/post.component';
     TwitterButtonComponent,
     UserProfileComponent,
     KeysPipe,
-    AdminProfileComponent,
-    PostComponent
+    AdminProfileComponent
   ],
   providers: [
     AuthService,
