@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 /// AngularFire imports
@@ -8,7 +9,9 @@ import { environment } from '@env/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { CoreModule } from './core/core.module';
+import { MaterialAppModule } from './ngmat/ngmat.module';
 
 @NgModule({
   declarations: [
@@ -16,10 +19,12 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    MaterialAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
