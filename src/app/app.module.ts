@@ -15,12 +15,11 @@ import { CoreModule } from './core/core.module';
 // Feature modules
 import { MaterialAppModule } from './ngmat/ngmat.module';
 // App component pieces
-import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
