@@ -9,6 +9,7 @@ import { AdminOnlyComponent } from './core/errors/admin-only/admin-only.componen
 import { LoginComponent } from './app-pages/login/login.component';
 import { HomeComponent } from './app-pages/home/home.component';
 import { PostBrowserComponent } from './app-pages/post-browser/post-browser.component';
+import { PostcardComponent } from './app-pages/post-browser/postcard/postcard.component';
 import { UserProfileComponent } from './app-pages/user-profile/user-profile.component';
 import { AdminProfileComponent } from './app-pages/admin-profile/admin-profile.component';
 
@@ -30,6 +31,10 @@ const routes: Routes = [
   {//INDEV
     path: 'posts',
     component: PostBrowserComponent
+  },
+  {
+    path: 'post/:id',
+    component: PostcardComponent
   },
   {//INDEV
     path: 'login',

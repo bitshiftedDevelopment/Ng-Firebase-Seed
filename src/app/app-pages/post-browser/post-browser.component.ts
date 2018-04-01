@@ -5,11 +5,12 @@ import 'rxjs/add/operator/map';
 
 import { AuthService } from '@app/core/auth.service';
 
+import { Post } from './post';
 //TODO Interface could be replaced by importing seperate file to keep this clean
-interface Post {
-  title: string;
-  content: string;
-}
+// interface Post {
+//   title: string;
+//   content: string;
+// }
 
 // This is a good way to add an id to an imported interface
 interface PostId extends Post {

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MaterialAppModule } from '@app/ngmat/ngmat.module';
+
 // Main pages
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -10,6 +12,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 // PostBrowser imports
 import { PostBrowserComponent } from './post-browser/post-browser.component';
+import { PostcardComponent } from './post-browser/postcard/postcard.component';
 import { FormsModule } from '@angular/forms';
 
 // Login imports
@@ -24,6 +27,7 @@ import { KeysPipe } from '@app/core/keys.pipe';
 @NgModule({
   imports: [
     CommonModule,
+    MaterialAppModule,
     FormsModule
   ],
   declarations: [
@@ -33,6 +37,7 @@ import { KeysPipe } from '@app/core/keys.pipe';
     UserProfileComponent,
     AdminProfileComponent,
     PostBrowserComponent,
+    PostcardComponent,
     GoogleButtonComponent,
     GithubButtonComponent,
     FacebookButtonComponent,

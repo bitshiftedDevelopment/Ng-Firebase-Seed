@@ -11,5 +11,7 @@
 
 <h1>A specific post:</h1>
 
-<h3>{{ (post | async)?.title }}</h3>
-<p>{{ (post | async)?.content }}</p>
+<postcard [post]="post"></postcard>
+
+<!-- <h3>{{ (post | async)?.title }}</h3>
+<p>{{ (post | async)?.content }}</p> -->
