@@ -16,6 +16,8 @@ import { ErrorsModule } from './errors/errors.module';
 import { KeysPipe } from './keys.pipe';
 
 // App imports
+/*Main routing*/
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { GoogleButtonComponent } from './login/google-button/google-button.component';
 import { GithubButtonComponent } from './login/github-button/github-button.component';
@@ -25,16 +27,18 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,
     AngularFireAuthModule,
     FormsModule,
     ErrorsModule
-  ],
+  ]
   declarations: [
     PostBrowserComponent,
     LoginComponent,
+    HomeComponent,
     GoogleButtonComponent,
     GithubButtonComponent,
     FacebookButtonComponent,
